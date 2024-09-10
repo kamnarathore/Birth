@@ -1,0 +1,148 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #fbc2eb, #a18cd1);
+    overflow: hidden;
+  }
+  
+  .birthday-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 3px solid #ffcc00;
+    border-radius: 20px;
+    width: 400px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .birthday-card h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5em;
+    color: #ff6347;
+    margin-bottom: 20px;
+  }
+  
+  /* Photo slider styles */
+  .slider {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    animation: slide-animation 12s infinite;
+  }
+  
+  .slide {
+    min-width: 100%;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  
+  /* Animation for the photo slider */
+  @keyframes slide-animation {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(0); }
+    33.1% { transform: translateX(-100%); }
+    66% { transform: translateX(-100%); }
+    66.1% { transform: translateX(-200%); }
+    100% { transform: translateX(-200%); }
+  }
+  
+  .birthday-content p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .balloons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .balloon {
+    width: 60px;
+    height: 80px;
+    border-radius: 50% 50% 45% 45%;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .balloon::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 2px;
+    height: 35px;
+    background-color: #555;
+    transform: translateX(-50%);
+  }
+  
+  .red {
+    background-color: #ff6347;
+  }
+  
+  .yellow {
+    background-color: #ffcc00;
+    animation-delay: 1s;
+  }
+  
+  .blue {
+    background-color: #66ccff;
+    animation-delay: 2s;
+  }
+  
+  /* Balloon animation */
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+  
+  /* Confetti effect */
+  .confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #ff6347 1px, transparent 1px), 
+                      radial-gradient(circle, #ffcc00 1px, transparent 1px),
+                      radial-gradient(circle, #66ccff 1px, transparent 1px);
+    background-size: 10px 10px;
+    animation: fall 10s linear infinite;
+  }
+  
+  @keyframes fall {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100vh; }
+  }
+  
